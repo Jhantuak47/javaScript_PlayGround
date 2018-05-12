@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating own object using construction function..</title>
+	<script type="text/javascript">
+		function person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		//intentiating object...
+		var firstPerson = new person("jhantu",23);
+		var secondPerson = new person("Amint",74);
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	
+	document.write("<h3> Name:"+firstPerson.name+"</h3>");
+	document.write(secondPerson.name);
+</script>
+</body>
+</html>

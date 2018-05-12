@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Storing JSON object into local storage...</title>
+  </head>
+  <body>
+    <div id = "divResult1"></div>
+    <div id = "divResult2"></div>
+    <script type="text/javascript">
+        var myObj = {"name":'jhantu',"address":'Dhanbad'};
+
+        var JSON_string = JSON.stringify(myObj);
+        document.getElementById('divResult1').innerHTML = JSON_string;
+
+        localStorage.setItem('testJSON',JSON_string);
+
+        var new_jsonObject = localStorage.getItem('testJSON');
+
+          var myObj = JSON.parse(new_jsonObject);
+          document.getElementById('divResult2').innerHTML = "name = " + myObj.name;
+
+    </script>
+  </body>
+</html>

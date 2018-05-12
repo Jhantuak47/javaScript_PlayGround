@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>second jquery</title>
+	<script type="text/javascript" src="library/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(function(){
+			$('#click').click(function(){
+				alert('let seee');
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#test').hover(function(){
+				$(this).html = 'text is changed';
+			});
+		});
+	</script>
+	<button id = "click">Click</button>
+	<p id = "test">On hover</p>
+</body>
+</html>

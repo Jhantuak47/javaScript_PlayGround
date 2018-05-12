@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Method inside object....</title>
+	<script type="text/javascript">
+		function people(name,age)
+		{
+			this.age=age;
+			this.name=name;
+			this.getLeftYears = LeftYears;
+		}
+		function LeftYears(){
+			var result = 65-this.age;
+			return result;
+		}
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	var firstPeople = new people("jhantu",23);
+	document.write("<h3> Name:"+firstPeople.name+"<br>Retire Age:"+firstPeople.getLeftYears()+"</h3>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+function Bicycle(cadence,speed,gear,tirePresure){
+  this.cadence = cadence;
+  this.speed = speed;
+  this.gear = gear;
+  this.tirePresure = tirePresure;
+  this.increaseTirePresure = function(bicycle){
+    bicycle.tirePresure +=3;
+  }
+}
+
+var bicycle = new Bicycle(30,30,30,32);
+bicycle.increaseTirePresure(bicycle);
+
+//Mechanics can also increase the tire presure...
+var mechanics = new Mechanics("jhantu");
+
+function Mechanics(name){
+  this.name = name;
+}
+
+mechanics.increaseTirePresure = bicycle.increaseTirePresure;
+mechanics.increaseTirePresure(bicycle);

@@ -1,0 +1,25 @@
+function Bicycle(cadence,speed,gear,tirePresure){
+  this.cadence = cadence;
+  this.speed = speed;
+  this.gear = gear;
+  this.tirePresure = tirePresure;
+  this.increaseTirePresure = function(){
+    this.tirePresure +=3;
+  }
+}
+
+var bicycle = new Bicycle(30,30,30,30);
+bicycle.increaseTirePresure();
+
+function Mechanic(name){
+  this.name = name;
+}
+
+var mechanic = new Mechanic("name");
+mechanic.increaseTirePresure = bicycle.increaseTirePresure;
+//your next step would be go to console and type bicycle you will get increase bicycle works well...
+//second step would be type mechanic.increaseTirePresure.call(bicycle)..
+//again if you check bicycle you can see mechanic can also able to change the tire pressure...
+
+//now the question is what is call method..
+//to understand it refer to tutorial javascript for developer object and prototype....

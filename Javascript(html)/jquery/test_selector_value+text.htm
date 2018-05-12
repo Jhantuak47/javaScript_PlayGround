@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.js"></script>
+  	<script type="text/javascript">
+  		window.jQuery || document.write("<script type='text/javascript' src='library/jquery-1.12.4.js'><\/script>")
+  	</script>
+  </head>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('input[name = "skils"]').click(function(){
+          check_box_outPut('skils');
+      });
+      $('input[name = "places"]').click(function(){
+          check_box_outPut('places');
+      });
+      check_box_outPut = function(selector){
+        var result = $('input[name = "' + selector +'"]:checked');
+            var string = result.length + " Item is selected...<br>";
+            if(result.length>0){
+                result.each(function(){
+                  var temp = $(this).val();
+                  string += temp + "-" + $('label[for = "cb-'+ temp +'"]').text() + "<br>";
+                });
+            }else{
+                string = "Nothing is Selected..";
+            }
+
+          $('#div'+selector).html(string);
+      }
+    });
+  </script>
+  <body>
+    <input type="checkbox" name = "skils" value="js">
+    <label for = "cb-js">javascript</label>
+    <input type="checkbox" name = "skils" value="jQuery">
+    <label for = "cb-jQuery">jQuery</label>
+    <input type="checkbox" name = "skils" value="Cobol">
+    <label for = "cb-Cobol">Cobol</label>
+    <input type="checkbox" name = "skils" value="VB">
+    <label for = "cb-VB">VB</label>
+    <br><br>
+    <input type="checkbox" name = "places" value="Mum">
+    <label for = "cb-Mum">Mumbai</label>
+    <input type="checkbox" name = "places" value="Kol">
+    <label for = "cb-Kol">Kolkata</label>
+    <input type="checkbox" name = "places" value="Pu">
+    <label for = "cb-Pu">Pune</label>
+    <input type="checkbox" name = "places" value="Pjb">
+    <label for = "cb-Pjb">Punkjab</label>
+    
+    <p>Skill Selected</p>
+    <div id ="divskils"></div>
+    <p>Places Selected</p>
+    <div id ="divplaces"></div>
+
+  </body>
+</html>

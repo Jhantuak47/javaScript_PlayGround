@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.js"></script>
+  	<script type="text/javascript">
+  		window.jQuery || document.write("<script type='text/javascript' src='library/jquery-1.12.4.js'><\/script>")
+  	</script>
+  </head>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('input[name = "skils"]').click(function(){
+          check_box_outPut('skils');
+      });
+      $('input[name = "places"]').click(function(){
+          check_box_outPut('places');
+      });
+      check_box_outPut = function(selector){
+        var result = $('input[name = "' + selector +'"]:checked');
+            var string = result.length + " Item is selected...<br>";
+            if(result.length>0){
+                result.each(function(){
+                  string += $(this).val()+"</br>";
+                });
+            }else{
+                string = "Nothing is Selected..";
+            }
+
+          $('#divResult').html(string);
+      }
+    });
+  </script>
+  <body>
+    <input type="checkbox" name = "skils" value="javascript">javascript
+    <input type="checkbox" name = "skils" value="jQuery">jQuery
+    <input type="checkbox" name = "skils" value="C#">C#
+    <input type="checkbox" name = "skils" value="VB">VB
+    <br><br>
+    <input type="checkbox" name = "places" value="Mumbai">Mumbai
+    <input type="checkbox" name = "places" value="Kolkata">Kolkata
+    <input type="checkbox" name = "places" value="Pune">Pune
+    <input type="checkbox" name = "places" value="Punkjab">Punkjab
+    <input type="submit" id ="skill_button" value="submit Skills"/>   <input type="submit" id ="place_button" value="Submit Places"/>
+    <br><br>
+    <div id ="divResult"></div>
+  </body>
+</html>

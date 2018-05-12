@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>counter Example...</title>
+  </head>
+
+  <body>
+    <div id = "divResult">0</div>
+    <button type="button" onclick="getCalled()" name="button">Count</button>
+    <script type="text/javascript">
+        function returnCount(){
+            var count = 0;
+            var incrementCount = function (){
+              count  = count+1;
+              return count;
+            }
+            return incrementCount;
+          }
+          var outer = returnCount()
+          function getCalled(){
+          document.getElementById('divResult').innerHTML = "count = " + outer();
+        }
+    </script>
+  </body>
+</html>

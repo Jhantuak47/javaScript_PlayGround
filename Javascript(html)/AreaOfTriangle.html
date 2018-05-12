@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculatin area of triangle dyanamically</title>
+	<script type="text/javascript">
+		function Triangle(length,breadth,height){
+			this.length=length;
+			this.breadth=breadth;
+			this.height=height;
+			this.getArea = areaGet;
+		}
+		function areaGet(){
+			var area;
+			area = (this.length)*(this.breadth)*(this.height);
+			return area;
+		} 
+		
+
+	</script>
+</head>
+<body>
+<table align="center"><tr><td>Enter Length:</td><td><input type="text" id = "len"/></td></tr>
+			<td>Enter Breadth:</td><td><input type="text" id = "bre"/></td></tr>
+			<td>Enter Height:</td><td><input type="text" id = "hei"/></td></tr>
+			<td><p id = "para"></p></td></tr>
+			<td><input type="button" value = "result" onclick="getResult();" /></td></tr>
+			</table>
+<script type="text/javascript">
+		function getResult(){
+			var myTriangle = new Triangle(document.getElementById('len').value,document.getElementById('bre').value,document.getElementById('hei').value);
+		var result = myTriangle.getArea();
+		//document.write("<H3> Ans="+result);
+		document.getElementById('para').innerHTML="Result: "+result;
+	}
+</script>
+</table>
+</body>
+</html>

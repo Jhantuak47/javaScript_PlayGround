@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Changing image 
+	</title>
+</head>
+	<script type="text/javascript">
+		var img_ind = 'fb';
+		function changeImage(){
+			if(img_ind == 'fb'){
+					document.getElementById('img').src = 'image/child.jpg';
+					img_ind = 'twi';
+			}else{
+				document.getElementById('img').src = 'image/content_top.jpg';
+					img_ind = 'fb';
+			}
+		}
+	var timer  = setInterval('changeImage()',2000);
+	</script>
+<body>
+	<img src="image/child.jpg" id="img" height="20%", width="40%" alt="image" onclick="clearInterval(timer); ">
+	<p>Clic Pics to stop</p>
+</body>
+</html>

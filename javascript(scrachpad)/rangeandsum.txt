@@ -1,0 +1,47 @@
+  var total = sum(range(1,10));
+
+  function sum(array){
+    var result = 0;
+    while(array.length)
+      result+=array.pop();
+    return result;
+  }
+
+  function range(start,end){
+    var myArray=[];
+    while(start!=end){
+    myArray.push(start);
+      start++;
+    }
+    myArray.push(end);
+    return myArray;
+  }
+
+  console.log(range(1,5));
+  console.log(total);
+//------------------------------------------------------------------------------------------------------
+//second way
+
+  function range(start,end){
+      var array=[];
+      var recurse = function(){
+          if(start==end){
+            array.push(end);
+          }
+          else
+          {
+            array.push(start);
+            recurse(++start,end);
+          }
+      };
+      recurse(start,end);
+      return array;
+  }
+
+  function sum(arr){
+    return arr.reduce(function(tot,val){
+      return tot+val;
+    });
+  }
+
+  console.log(sum(range(1,10)));
